@@ -252,8 +252,8 @@ func (d *defaultProcessor) GetArtifactType(ctx context.Context, artifact *artifa
 func (d *defaultProcessor) AbstractMetadata(ctx context.Context, artifact *artifact.Artifact, manifest []byte) error {
 	configLayer := PullBlob(artifact.RepositoryName, manifest.Config.Digest)
 	// Extract the extra attributes according to the config.
-	// extractAttrsFromConfig will get all keys in user config except keys in skipKeyList
-	extraAttrs := extractAttrsFromConfig(configLayer)
+	// extractAttrsFromManifest will get all keys in manifest except keys in skiplist.
+	extraAttrs := extractAttrsFromManifest(manifest, configLayer)
 	artifact.ExtraAttrs = extraAttrs
 	return nil
 }
