@@ -165,7 +165,7 @@ This proposal is not to:
 
 To address these problems, we propose a new feature **Enhanced default processor** in Harbor Core. The contributions of the proposal are:
 
-- The Harbor-specific schema in artifact config layer to tell Harbor core more information about the user-defined artifacts.
+- The Harbor-specific schema in artifact manifest to tell Harbor core more information about the user-defined artifacts.
 - The enhanced default processor implementation to support user-defined artifacts.
 
 ### Harbor-specific Configuration
